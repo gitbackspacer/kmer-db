@@ -16,9 +16,9 @@ else
 endif
 
 CC = g++
-CFLAGS	= -Wall -O3 -m64 -std=c++0x -fopenmp -pthread -mavx -I $(KMER_DB_LIBS_DIR) -I $(EXTRA_LIBS_DIR)
-CFLAGS_AVX2	= -Wall -O3 -m64 -std=c++0x -fopenmp -pthread -mavx2 -I $(KMER_DB_LIBS_DIR) -I $(EXTRA_LIBS_DIR)
-CLINK	= -lm -O3 -std=c++0x -lpthread -fopenmp -mavx -fabi-version=6 
+CFLAGS	= -Wall -O3 -m64 -std=gnu14 -fopenmp -pthread -mavx -I $(KMER_DB_LIBS_DIR) -I $(EXTRA_LIBS_DIR)
+CFLAGS_AVX2	= -Wall -O3 -m64 -std=gnu14 -fopenmp -pthread -mavx2 -I $(KMER_DB_LIBS_DIR) -I $(EXTRA_LIBS_DIR)
+CLINK	= -lm -O3 -std=gnu14 -lpthread -fopenmp -mavx -fabi-version=6 
 
 OBJS := $(KMER_DB_MAIN_DIR)/analyzer.o \
 	$(KMER_DB_MAIN_DIR)/console.o \
@@ -36,7 +36,7 @@ OBJS := $(KMER_DB_MAIN_DIR)/analyzer.o \
 	$(KMER_DB_LIBS_DIR)/mmer.o 
 
 $(KMER_DB_MAIN_DIR)/parallel_sorter.o: $(KMER_DB_MAIN_DIR)/parallel_sorter.cpp
-	$(CC) -O3 -mavx -m64 -std=c++0x -pthread -fopenmp -c $< -o $@
+	$(CC) -O3 -mavx -m64 -std=gnu14 -pthread -fopenmp -c $< -o $@
 
 ifeq ($(NO_AVX2),true)
 ## no avx2 support
