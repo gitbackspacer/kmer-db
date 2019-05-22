@@ -36,7 +36,7 @@ OBJS := $(KMER_DB_MAIN_DIR)/analyzer.o \
 	$(KMER_DB_LIBS_DIR)/mmer.o 
 
 $(KMER_DB_MAIN_DIR)/parallel_sorter.o: $(KMER_DB_MAIN_DIR)/parallel_sorter.cpp
-	$(CC) -O3 -mavx -m64 -std=c++14 -pthread -fopenmp -c $< -o $@
+	$(CC) -O3 -mavx -m64 -std=c++0x -pthread -fopenmp -c $< -o $@
 
 ifeq ($(NO_AVX2),true)
 ## no avx2 support
