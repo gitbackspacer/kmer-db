@@ -16,8 +16,8 @@ else
 endif
 
 CC = g++
-CFLAGS	= -Wall -O3 -m64 -std=c++14 -fopenmp -pthread -mavx -I $(KMER_DB_LIBS_DIR) -I $(EXTRA_LIBS_DIR)
-CFLAGS_AVX2	= -Wall -O3 -m64 -std=c++14 -fopenmp -pthread -mavx2 -I $(KMER_DB_LIBS_DIR) -I $(EXTRA_LIBS_DIR)
+CFLAGS	= -Wall -O3 -m64 -std=c++0x -fopenmp -pthread -mavx -I $(KMER_DB_LIBS_DIR) -I $(EXTRA_LIBS_DIR)
+CFLAGS_AVX2	= -Wall -O3 -m64 -std=c++0x -fopenmp -pthread -mavx2 -I $(KMER_DB_LIBS_DIR) -I $(EXTRA_LIBS_DIR)
 CLINK	= -lm -O3 -std=c++14 -lpthread -fopenmp -mavx -fabi-version=6 
 
 OBJS := $(KMER_DB_MAIN_DIR)/analyzer.o \
